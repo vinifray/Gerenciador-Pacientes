@@ -2,12 +2,12 @@ package br.com.zup.App.DTOs;
 
 import br.com.zup.App.models.Paciente;
 
-public class PacienteDTO {
+public class CadastroPacienteDTO {
     private String nome;
     private int idade;
     private String cpf;
 
-    public PacienteDTO() {
+    public CadastroPacienteDTO() {
     }
 
     public String getNome() {
@@ -34,7 +34,7 @@ public class PacienteDTO {
         this.cpf = cpf;
     }
 
-    public static Paciente converterDTOParaPaciente(PacienteDTO pacienteDTO){
+    public static Paciente converterDTOParaPaciente(CadastroPacienteDTO pacienteDTO){
         Paciente paciente = new Paciente();
         paciente.setNome(pacienteDTO.getNome());
         paciente.setCpf(pacienteDTO.getCpf());
