@@ -14,4 +14,13 @@ public class PacienteService {
         pacientes.add(paciente);
         return paciente;
     }
+
+    public Paciente pesquisarPacientePeloCPF(String cpf){
+        for(Paciente paciente : pacientes){
+            if (paciente.getCpf().equals(cpf)){
+                return paciente;
+            }
+        }
+        throw new RuntimeException("Paciente não encontrado pelo CPF indicado");
+    }
 }
