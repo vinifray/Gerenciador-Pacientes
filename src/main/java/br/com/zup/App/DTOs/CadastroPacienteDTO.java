@@ -34,11 +34,11 @@ public class CadastroPacienteDTO {
         this.cpf = cpf;
     }
 
-    public static Paciente converterDTOParaPaciente(CadastroPacienteDTO pacienteDTO){
+    public Paciente converterDTOParaPaciente(){
         Paciente paciente = new Paciente();
-        paciente.setNome(pacienteDTO.getNome());
-        paciente.setCpf(pacienteDTO.getCpf());
-        paciente.setIdade(pacienteDTO.getIdade());
+        paciente.setNome(this.nome);
+        paciente.setCpf(this.cpf);
+        paciente.setIdade(this.idade);
 
         return paciente;
     }
