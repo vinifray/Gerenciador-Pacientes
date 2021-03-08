@@ -12,6 +12,8 @@ public class PacienteService {
 
     public Paciente salvarPaciente(Paciente paciente){
         pacientes.add(paciente);
+        paciente.setHistorico(new ArrayList<>());
+        
         return paciente;
     }
 
