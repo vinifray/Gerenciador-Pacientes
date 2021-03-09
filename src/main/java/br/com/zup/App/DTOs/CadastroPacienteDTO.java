@@ -3,11 +3,13 @@ package br.com.zup.App.DTOs;
 import br.com.zup.App.models.Paciente;
 import org.hibernate.validator.constraints.br.CPF;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.*;
 
 public class CadastroPacienteDTO {
-
+    
+    @NotNull(message = "Nome é um campo obrigatorio")
+    @NotEmpty(message = "nome não pode estar em branco")
+    @Size(min = 3, message = "Nome muito pequeno, impossivel ser um nome")
     private String nome;
 
     @Email(message = "Email invalido")

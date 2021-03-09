@@ -15,12 +15,8 @@ public class HistoricoController {
     private HistoricoService historicoService;
 
     @PostMapping("{cpf}/")
-    public Historico registrarHistorico(@RequestBody Historico historico, @PathVariable String cpf){
-        try {
-            Historico objHistorico = historicoService.registrarHisorico(cpf, historico);
-            return objHistorico;
-        }catch (RuntimeException error){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, error.getMessage());
-        }
+    public Historico registrarHistorico(@RequestBody Historico historico, @PathVariable String cpf) {
+        Historico objHistorico = historicoService.registrarHisorico(cpf, historico);
+        return objHistorico;
     }
 }

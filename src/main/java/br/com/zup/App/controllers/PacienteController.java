@@ -19,18 +19,14 @@ public class PacienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Paciente cadastrarPaciente(@RequestBody @Valid CadastroPacienteDTO cadastroPacienteDTO){
+    public Paciente cadastrarPaciente(@RequestBody @Valid CadastroPacienteDTO cadastroPacienteDTO) {
         Paciente objetoPaciente = pacienteService.salvarPaciente(cadastroPacienteDTO.converterDTOParaPaciente());
         return objetoPaciente;
     }
 
     @GetMapping("{cpf}/")
-    public Paciente pesquisarPaciente(@PathVariable String cpf){
-        try{
-            Paciente paciente = pacienteService.pesquisarPacientePeloCPF(cpf);
-            return paciente;
-        }catch (RuntimeException error){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, error.getMessage());
-        }
+    public Paciente pesquisarPaciente(@PathVariable String cpf) {
+        Paciente paciente = pacienteService.pesquisarPacientePeloCPF(cpf);
+        return paciente;
     }
 }
