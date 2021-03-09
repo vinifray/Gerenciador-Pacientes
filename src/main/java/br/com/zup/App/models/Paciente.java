@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Paciente {
     private String nome;
+    private String email;
     private int idade;
     private String cpf;
     private List<Historico> historico;
@@ -41,5 +42,13 @@ public class Paciente {
 
     public void setHistorico(List<Historico> historico) {
         this.historico = historico;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
