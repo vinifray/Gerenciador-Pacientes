@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.br.CPF;
 import javax.validation.constraints.*;
 
 public class CadastroPacienteDTO {
-    
+
     @NotNull(message = "Nome é um campo obrigatorio")
     @NotEmpty(message = "nome não pode estar em branco")
     @Size(min = 3, message = "Nome muito pequeno, impossivel ser um nome")
